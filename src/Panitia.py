@@ -224,8 +224,8 @@ class PanitiaPage(Tk.Frame):
     # Dekripsi
     def dekrip(self):
         encrypted_message = self.masukan_file.get()
-        d = int(self.d.get()) 
-        n2 = int(self.n2.get())
+        d = int(self.d.get("1.0",'end-1c')) 
+        n2 = int(self.n2.get("1.0",'end-1c'))
         encrypted_list = [int(char) for char in encrypted_message.split()]
         # plain = [chr((char ** d) % n2) for char in encrypted_message]
         plain = [chr(pow(char, d, n2)) for char in encrypted_list]
